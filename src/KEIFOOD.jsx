@@ -209,6 +209,7 @@ const Icon = ({ name, size = 16, color = "currentColor" }) => {
     star: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z",
     coffee: "M18 8h1a4 4 0 010 8h-1 M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4z M6 1v3M10 1v3M14 1v3",
     pizza: "M12 2a10 10 0 100 20 10 10 0 000-20z M12 2C6.5 2 2 6.5 2 12",
+    utensils: "M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2 M7 2v20 M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3a2 2 0 0 0 2-2v-5 M15 2v20",
   };
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -828,7 +829,7 @@ function LandingView({ setView, reset }) {
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "40px 24px", background: "#0a0b0f" }}>
       <div style={{ textAlign: "center", marginBottom: 56 }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, marginBottom: 16 }}>
-          <div className="logo-icon" style={{ width: 44, height: 44, fontSize: 22 }}>⚡</div>
+          <div className="logo-icon" style={{ width: 44, height: 44 }}><Icon name="utensils" size={24} color="#fff" /></div>
           <span style={{ fontSize: 28, fontWeight: 700, color: "#f1f5f9", letterSpacing: "-0.8px" }}>KEIFOOD</span>
         </div>
         <p style={{ fontSize: 16, color: "#4b5563", maxWidth: 400, lineHeight: 1.7 }}>
@@ -914,7 +915,7 @@ function AdminLayout({ currentAdmin, state, dispatch, section, setSection, setVi
       <aside className="sidebar">
         <div className="sidebar-logo">
           <div className="logo-mark">
-            <div className="logo-icon">⚡</div>
+            <div className="logo-icon"><Icon name="utensils" size={16} color="#fff" /></div>
             <div>
               <div className="logo-text">KEIFOOD</div>
               <div className="logo-sub">{currentRestaurant.name}</div>
@@ -1403,7 +1404,7 @@ function CreatorLogin({ pin, setPin, onSuccess, setView }) {
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#0a0b0f" }}>
       <div style={{ width: 320 }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
-          <div className="logo-icon" style={{ width: 48, height: 48, fontSize: 24, margin: "0 auto 16px" }}>⚡</div>
+          <div className="logo-icon" style={{ width: 48, height: 48, margin: "0 auto 16px" }}><Icon name="utensils" size={24} color="#fff" /></div>
           <div style={{ fontSize: 20, fontWeight: 600, color: "#f1f5f9", marginBottom: 4 }}>Creador de App</div>
           <div style={{ fontSize: 13, color: "#4b5563" }}>Enter Creator PIN</div>
         </div>
@@ -1437,7 +1438,7 @@ function CreatorLayout({ state, dispatch, setView }) {
     <div className="app-layout">
       <aside className="sidebar">
         <div className="sidebar-logo">
-          <div className="logo-mark"><div className="logo-icon">⚡</div><div><div className="logo-text">Admin Creador</div><div className="logo-sub">Plataforma</div></div></div>
+          <div className="logo-mark"><div className="logo-icon"><Icon name="utensils" size={16} color="#fff" /></div><div><div className="logo-text">Admin Creador</div><div className="logo-sub">Plataforma</div></div></div>
         </div>
         <div className="sidebar-footer" style={{ marginTop: "auto", display: "flex", gap: 10 }}>
           <button className="btn btn-ghost w-full" onClick={() => setView("landing")}><Icon name="logout" size={13} /> Logout</button>
@@ -1534,7 +1535,7 @@ function AdminLogin({ state, pin, setPin, onSuccess, setView }) {
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#0a0b0f" }}>
       <div style={{ width: 320 }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
-          <div className="logo-icon" style={{ width: 48, height: 48, fontSize: 24, margin: "0 auto 16px" }}>⚡</div>
+          <div className="logo-icon" style={{ width: 48, height: 48, margin: "0 auto 16px" }}><Icon name="utensils" size={24} color="#fff" /></div>
           <div style={{ fontSize: 20, fontWeight: 600, color: "#f1f5f9", marginBottom: 4 }}>Acceso Administrador</div>
           <div style={{ fontSize: 13, color: "#4b5563" }}>Ingresar PIN de Administrador</div>
         </div>
@@ -1585,7 +1586,7 @@ function WaiterLogin({ state, pin, setPin, onSuccess, setView }) {
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#0a0b0f" }}>
       <div style={{ width: 320 }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
-          <div className="logo-icon" style={{ width: 48, height: 48, fontSize: 24, margin: "0 auto 16px" }}>⚡</div>
+          <div className="logo-icon" style={{ width: 48, height: 48, margin: "0 auto 16px" }}><Icon name="utensils" size={24} color="#fff" /></div>
           <div style={{ fontSize: 20, fontWeight: 600, color: "#f1f5f9", marginBottom: 4 }}>Acceso Meseros</div>
           <div style={{ fontSize: 13, color: "#4b5563" }}>Ingresa tu PIN de 4 dígitos</div>
         </div>
@@ -1801,7 +1802,7 @@ function CustomerInterface({ state, dispatch, session, setSession, setView }) {
       <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#f8fafc", padding: 24 }}>
         <div style={{ width: "100%", maxWidth: 360 }}>
           <div style={{ textAlign: "center", marginBottom: 32 }}>
-            <div style={{ width: 52, height: 52, borderRadius: 14, background: "linear-gradient(135deg, var(--primary), var(--primary-hover))", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, margin: "0 auto 16px", boxShadow: "0 8px 32px var(--primary-border-soft)" }}>⚡</div>
+            <div style={{ width: 52, height: 52, borderRadius: 14, background: "linear-gradient(135deg, var(--primary), var(--primary-hover))", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px", boxShadow: "0 8px 32px var(--primary-border-soft)" }}><Icon name="utensils" size={26} color="#fff" /></div>
             <div style={{ fontSize: 22, fontWeight: 700, color: "#0f172a", marginBottom: 4 }}>Únete a tu Mesa</div>
             <div style={{ fontSize: 14, color: "#64748b" }}>Ingresa tu nombre para ver tu cuenta</div>
           </div>
