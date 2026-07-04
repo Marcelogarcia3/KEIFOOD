@@ -694,6 +694,114 @@ const css = `
   .text-muted { color: var(--text-muted); }
   .text-green { color: var(--text-green); }
   .text-red { color: #ef4444; }
+  
+  /* RESPONSIVE LAYOUTS */
+  @media (max-width: 768px) {
+    .app-layout {
+      flex-direction: column;
+    }
+    
+    .sidebar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: auto;
+      min-height: auto;
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: grid;
+      grid-template-areas: 
+        "logo footer"
+        "nav nav";
+      grid-template-columns: 1fr auto;
+    }
+    
+    .sidebar-logo {
+      grid-area: logo;
+      border-bottom: none;
+      padding: 12px 16px;
+    }
+    
+    .sidebar-nav {
+      grid-area: nav;
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      padding: 6px 12px;
+      gap: 6px;
+      border-top: 1px solid var(--border);
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .nav-section-label {
+      display: none;
+    }
+    
+    .nav-item {
+      padding: 6px 12px;
+      font-size: 13px;
+      white-space: nowrap;
+      width: auto;
+      display: inline-flex;
+    }
+    
+    .sidebar-footer {
+      grid-area: footer;
+      border-top: none;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    
+    .sidebar-footer .role-badge {
+      display: none;
+    }
+    
+    .main-content {
+      margin-left: 0;
+      min-height: calc(100vh - 100px);
+    }
+    
+    .topbar {
+      padding: 0 16px;
+    }
+    
+    .page {
+      padding: 16px;
+    }
+    
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .metric-card {
+      padding: 14px 16px;
+    }
+    
+    .metric-value {
+      font-size: 22px;
+    }
+    
+    .grid-2, .grid-3, .form-row {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+  
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 16px;
+  }
 `;
 
 // ============================================================
@@ -837,7 +945,7 @@ function LandingView({ setView, reset }) {
         </p>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 220px)", gap: 16, marginBottom: 40 }}>
+      <div className="roles-grid">
         <div className="role-card" onClick={() => setView("admin-login")}>
           <div className="role-card-icon">🏛️</div>
           <div className="role-card-title">Administrador</div>
