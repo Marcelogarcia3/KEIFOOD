@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const path = "c:/Users/marce/Documents/Restaurant/mi-proyecto-KEIFOOD/KEIFKEIFOOD
+const path = "c:/Users/marce/Documents/Restaurant/KEIFOOD/KEIFKEIFOOD
 let content = fs.readFileSync(path, 'utf8');
 
 const translations = {
